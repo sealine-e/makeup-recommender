@@ -1,50 +1,41 @@
-import streamlit as st
-import pandas as pd
-import numpy as np
-
 
 import streamlit as st
-import pandas as pd
-import numpy as np
 
-from main.predictions import generate_collaborative_ratings, generate_synthetic_ratings, combine_ratings
+from main.predictor import get_similar_products, df
 
+# Streamlit app UI components
+st.title("Sephora Product Recommender")
 
+# User input fields
+category_input = st.multiselect("Select your preferred categories", df['category'].unique())
+price_range_input = st.slider("Select your price range", min_value=float(df['price'].min()),
+                              max_value=float(df['price'].max()), value=(20.00, 50.00))
+rating_min_input = st.slider("Select minimum rating", min_value=1.0, max_value=5.0, value=4.0)
+num_products_input = st.number_input("How many items would you like to be recommended?", min_value=0, max_value=100)
 
-# Streamlit App
-st.title("Sephora Product Recommendation System")
+# Button to trigger the recommendation
+if st.button("Get Recommendations"):
+    if category_input:
+        min_price, max_price = price_range_input
+        similar_products = get_similar_products(
+            category_input,
+            min_price, max_price,
+            rating_min_input,
+            num_products_input
+        )
 
-# Load dataset
-df = pd.read_csv("main/sephora_website_dataset.csv")
-df_filtered = df[['id', 'brand', 'name', 'category', 'price', 'rating', 'number_of_reviews']]
-
-# User input for preferences
-preferred_brands = st.multiselect("Select your preferred brands", df_filtered['brand'].unique())
-preferred_categories = st.multiselect("Select your preferred categories", df_filtered['category'].unique())
-price_range = st.slider("Select your price range", min_value=int(df_filtered['price'].min()),
-                        max_value=int(df_filtered['price'].max()), value=(20, 50))
-min_rating = st.slider("Select minimum rating", min_value=1.0, max_value=5.0, value=4.0)
-
-# Apply filters based on user preferences
-user_preferences = {
-    "preferred_brands": preferred_brands,
-    "preferred_categories": preferred_categories,
-    "price_range": price_range,
-    "min_rating": min_rating
-}
-
-# Generate recommendations if brands and categories are selected
-if len(preferred_brands) > 0 and len(preferred_categories) > 0:
-    combined_recommendations = combine_ratings(df_filtered, user_preferences)
-
-    # Ensure the data is not empty before displaying
-    if not combined_recommendations.empty:
-        # Debug: Check the data before plotting
-        st.write(combined_recommendations.head(10))
-
-        st.write("All recommendations have been displayed based on selected preferences.")
-    else:
-        st.warning("No recommendations found for the selected preferences.")
-else:
-    st.warning("Please select at least one brand and one category to get recommendations.")
-
+        # Display the recommended products with product names as clickable links
+        if not similar_products.empty:
+            st.markdown(f"**Recommended Products:**"
+                        )
+            for _, row in similar_products.iterrows():
+                st.page_link(row['URL'], label=f"**Product Name**: {row['name']}")
+                # Create a clickable product name
+                st.markdown(
+                    f"**Brand:** {row['brand']}  \n"
+                    f"**Category:** {row['category']}  \n"
+                    f"**Price:** ${row['price']}0 USD  \n"
+                    f"**Rating:** {row['rating']}⭐",
+                    unsafe_allow_html=True
+                )
+            st.write(f"*Note: Products shown are not guaranteed to be in stock.*")
