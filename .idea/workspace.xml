@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc3e6798-e5d4-4659-9b20-d4be96b543e3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main/predictions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appold.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/predictor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/sephora.db" beforeDir="false" afterPath="$PROJECT_DIR$/main/sephora.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tabpy_log.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/test.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +41,11 @@
     "Python.app.executor": "Run",
     "Python.main.executor": "Run",
     "Python.ml_prediction_model.executor": "Run",
+    "Python.predictor.executor": "Run",
     "Python.test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/cjchi/PycharmProjects/sephora"
   }
 }]]></component>
   <component name="RecentsManager">
