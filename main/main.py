@@ -3,6 +3,7 @@ import sqlite3
 import matplotlib.pyplot as plt
 import plotly.express as px
 
+
 # read csv and select desired columns
 df = pd.read_csv("sephora_website_dataset.csv")
 df_filtered = df[['id', 'brand', 'name', 'category', 'price', 'rating', 'number_of_reviews']]
@@ -37,16 +38,6 @@ recommended_products = recommended_products.sort_values(
     by=['rating', 'number_of_reviews'], ascending=[False, False]
 )
 
-fig = px.bar(
-    recommended_products.head(10),
-    x='name',
-    y='rating',
-    color='price',
-    hover_data=['brand', 'category'],
-    title="Recommended Products"
-)
-fig.show()
-
 
 def recommend_products(preferences, data):
     recommended = data[
@@ -56,8 +47,10 @@ def recommend_products(preferences, data):
         (data['price'] <= preferences['price_range'][1]) &
         (data['rating'] >= preferences['min_rating'])
         ]
+    print(recommended)
     return recommended.sort_values(by=['rating', 'number_of_reviews'], ascending=[False, False])
 
 
 recommendations = recommend_products(user_preferences, df_filtered)
 print(recommendations[['name', 'brand', 'category', 'price', 'rating']].head(10))
+

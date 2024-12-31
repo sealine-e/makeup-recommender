@@ -1,1 +1,1 @@
-# makeup-recommender
+# Makeup Recommender
