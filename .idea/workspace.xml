@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc3e6798-e5d4-4659-9b20-d4be96b543e3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/appold.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/predictor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/sephora.db" beforeDir="false" afterPath="$PROJECT_DIR$/main/sephora.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/sqlqueries.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/sqlqueries.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +39,7 @@
     "Python.main.executor": "Run",
     "Python.ml_prediction_model.executor": "Run",
     "Python.predictor.executor": "Run",
+    "Python.sqlqueries.executor": "Run",
     "Python.test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -50,9 +48,39 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cjchi\PycharmProjects\" />
       <recent name="C:\Users\cjchi\PycharmProjects\sephora" />
       <recent name="C:\Users\cjchi\PycharmProjects\sephora\main" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="sqlqueries" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="sephora" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/sqlqueries.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.sqlqueries" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

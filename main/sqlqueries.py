@@ -57,4 +57,4 @@ fig.update_traces(hovertemplate='<b>Brand:</b> %{customdata[0]}<br>'
                                 '<b>Product Count:</b> %{marker.color:.2f}')
 # hovertemplate='<b>Brand:</b> %{brand}<br><b>Avg Rating:</b> %{y}'
 # Show the plot
-# fig.show()
+fig.show()
